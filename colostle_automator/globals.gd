@@ -1,12 +1,11 @@
 extends Node
-var deck = {
+var deck_values = {
 	"ace_of_spades": 
 		{
 		"number": 1,
 		"face": "none",
 		"colour": "black",
 		"suit": "spades",
-		"drawn": false
 		},
 	"two_of_spades": 
 		{
@@ -14,7 +13,6 @@ var deck = {
 		"face": "none",
 		"colour": "black",
 		"suit": "spades",
-		"drawn": false
 		},
 	"three_of_spades": 
 		{
@@ -22,7 +20,6 @@ var deck = {
 		"face": "none",
 		"colour": "black",
 		"suit": "spades",
-		"drawn": false
 		},
 	"four_of_spades": 
 		{
@@ -30,7 +27,6 @@ var deck = {
 		"face": "none",
 		"colour": "black",
 		"suit": "spades",
-		"drawn": false
 		},
 	"five_of_spades": 
 		{
@@ -38,7 +34,6 @@ var deck = {
 		"face": "none",
 		"colour": "black",
 		"suit": "spades",
-		"drawn": false
 		},
 	"six_of_spades": 
 		{
@@ -46,7 +41,6 @@ var deck = {
 		"face": "none",
 		"colour": "black",
 		"suit": "spades",
-		"drawn": false
 		},
 	"seven_of_spades": 
 		{
@@ -54,7 +48,6 @@ var deck = {
 		"face": "none",
 		"colour": "black",
 		"suit": "spades",
-		"drawn": false
 		},
 	"eight_of_spades": 
 		{
@@ -62,7 +55,6 @@ var deck = {
 		"face": "none",
 		"colour": "black",
 		"suit": "spades",
-		"drawn": false
 		},
 	"nine_of_spades": 
 		{
@@ -70,7 +62,6 @@ var deck = {
 		"face": "none",
 		"colour": "black",
 		"suit": "spades",
-		"drawn": false
 		},
 	"ten_of_spades": 
 		{
@@ -78,7 +69,6 @@ var deck = {
 		"face": "none",
 		"colour": "black",
 		"suit": "spades",
-		"drawn": false
 		},
 	"jack_of_spades": 
 		{
@@ -86,7 +76,6 @@ var deck = {
 		"face": "jack",
 		"colour": "black",
 		"suit": "spades",
-		"drawn": false
 		},
 	"queen_of_spades": 
 		{
@@ -94,7 +83,6 @@ var deck = {
 		"face": "queen",
 		"colour": "black",
 		"suit": "spades",
-		"drawn": false
 		},
 	"king_of_spades": 
 		{
@@ -102,7 +90,6 @@ var deck = {
 		"face": "king",
 		"colour": "black",
 		"suit": "spades",
-		"drawn": false
 		},
 	"ace_of_clubs": 
 		{
@@ -110,7 +97,6 @@ var deck = {
 		"face": "none",
 		"colour": "black",
 		"suit": "clubs",
-		"drawn": false
 		},
 	"two_of_clubs": 
 		{
@@ -118,7 +104,6 @@ var deck = {
 		"face": "none",
 		"colour": "black",
 		"suit": "clubs",
-		"drawn": false
 		},
 	"three_of_clubs": 
 		{
@@ -126,7 +111,6 @@ var deck = {
 		"face": "none",
 		"colour": "black",
 		"suit": "clubs",
-		"drawn": false
 		},
 	"four_of_clubs": 
 		{
@@ -134,7 +118,6 @@ var deck = {
 		"face": "none",
 		"colour": "black",
 		"suit": "clubs",
-		"drawn": false
 		},
 	"five_of_clubs": 
 		{
@@ -142,7 +125,6 @@ var deck = {
 		"face": "none",
 		"colour": "black",
 		"suit": "clubs",
-		"drawn": false
 		},
 	"six_of_clubs": 
 		{
@@ -150,7 +132,6 @@ var deck = {
 		"face": "none",
 		"colour": "black",
 		"suit": "clubs",
-		"drawn": false
 		},
 	"seven_of_clubs": 
 		{
@@ -158,15 +139,13 @@ var deck = {
 		"face": "none",
 		"colour": "black",
 		"suit": "clubs",
-		"drawn": false
-		},
+		"drawn": false		},
 	"eight_of_clubs": 
 		{
 		"number": 8,
 		"face": "none",
 		"colour": "black",
 		"suit": "clubs",
-		"drawn": false
 		},
 	"nine_of_clubs": 
 		{
@@ -174,7 +153,6 @@ var deck = {
 		"face": "none",
 		"colour": "black",
 		"suit": "clubs",
-		"drawn": false
 		},
 	"ten_of_clubs": 
 		{
@@ -182,7 +160,6 @@ var deck = {
 		"face": "none",
 		"colour": "black",
 		"suit": "clubs",
-		"drawn": false
 		},
 	"jack_of_clubs": 
 		{
@@ -190,7 +167,6 @@ var deck = {
 		"face": "jack",
 		"colour": "black",
 		"suit": "clubs",
-		"drawn": false
 		},
 	"queen_of_clubs": 
 		{
@@ -198,7 +174,6 @@ var deck = {
 		"face": "queen",
 		"colour": "black",
 		"suit": "clubs",
-		"drawn": false
 		},
 	"king_of_clubs": 
 		{
@@ -206,7 +181,6 @@ var deck = {
 		"face": "king",
 		"colour": "black",
 		"suit": "clubs",
-		"drawn": false
 		},
 	"ace_of_hearts": 
 		{
@@ -214,7 +188,6 @@ var deck = {
 		"face": "none",
 		"colour": "red",
 		"suit": "hearts",
-		"drawn": false
 		},
 	"two_of_hearts": 
 		{
@@ -222,7 +195,6 @@ var deck = {
 		"face": "none",
 		"colour": "red",
 		"suit": "hearts",
-		"drawn": false
 		},
 	"three_of_hearts": 
 		{
@@ -230,7 +202,6 @@ var deck = {
 		"face": "none",
 		"colour": "red",
 		"suit": "hearts",
-		"drawn": false
 		},
 	"four_of_hearts": 
 		{
@@ -238,7 +209,6 @@ var deck = {
 		"face": "none",
 		"colour": "red",
 		"suit": "hearts",
-		"drawn": false
 		},
 	"five_of_hearts": 
 		{
@@ -246,7 +216,6 @@ var deck = {
 		"face": "none",
 		"colour": "red",
 		"suit": "hearts",
-		"drawn": false
 		},
 	"six_of_hearts": 
 		{
@@ -254,7 +223,6 @@ var deck = {
 		"face": "none",
 		"colour": "red",
 		"suit": "hearts",
-		"drawn": false
 		},
 	"seven_of_hearts": 
 		{
@@ -262,7 +230,6 @@ var deck = {
 		"face": "none",
 		"colour": "red",
 		"suit": "hearts",
-		"drawn": false
 		},
 	"eight_of_hearts": 
 		{
@@ -270,7 +237,6 @@ var deck = {
 		"face": "none",
 		"colour": "red",
 		"suit": "hearts",
-		"drawn": false
 		},
 	"nine_of_hearts": 
 		{
@@ -278,7 +244,6 @@ var deck = {
 		"face": "none",
 		"colour": "red",
 		"suit": "hearts",
-		"drawn": false
 		},
 	"ten_of_hearts": 
 		{
@@ -286,7 +251,6 @@ var deck = {
 		"face": "none",
 		"colour": "red",
 		"suit": "hearts",
-		"drawn": false
 		},
 	"jack_of_hearts": 
 		{
@@ -294,7 +258,6 @@ var deck = {
 		"face": "jack",
 		"colour": "red",
 		"suit": "hearts",
-		"drawn": false
 		},
 	"queen_of_hearts": 
 		{
@@ -302,7 +265,6 @@ var deck = {
 		"face": "queen",
 		"colour": "red",
 		"suit": "hearts",
-		"drawn": false
 		},
 	"king_of_hearts": 
 		{
@@ -310,7 +272,6 @@ var deck = {
 		"face": "king",
 		"colour": "red",
 		"suit": "hearts",
-		"drawn": false
 		},
 	"ace_of_diamonds": 
 		{
@@ -318,7 +279,6 @@ var deck = {
 		"face": "none",
 		"colour": "red",
 		"suit": "diamonds",
-		"drawn": false
 		},
 	"two_of_diamonds": 
 		{
@@ -326,7 +286,6 @@ var deck = {
 		"face": "none",
 		"colour": "red",
 		"suit": "diamonds",
-		"drawn": false
 		},
 	"three_of_diamonds": 
 		{
@@ -334,7 +293,6 @@ var deck = {
 		"face": "none",
 		"colour": "red",
 		"suit": "diamonds",
-		"drawn": false
 		},
 	"four_of_diamonds": 
 		{
@@ -342,7 +300,6 @@ var deck = {
 		"face": "none",
 		"colour": "red",
 		"suit": "diamonds",
-		"drawn": false
 		},
 	"five_of_diamonds": 
 		{
@@ -350,7 +307,6 @@ var deck = {
 		"face": "none",
 		"colour": "red",
 		"suit": "diamonds",
-		"drawn": false
 		},
 	"six_of_diamonds": 
 		{
@@ -358,7 +314,6 @@ var deck = {
 		"face": "none",
 		"colour": "red",
 		"suit": "diamonds",
-		"drawn": false
 		},
 	"seven_of_diamonds": 
 		{
@@ -366,7 +321,6 @@ var deck = {
 		"face": "none",
 		"colour": "red",
 		"suit": "diamonds",
-		"drawn": false
 		},
 	"eight_of_diamonds": 
 		{
@@ -374,7 +328,6 @@ var deck = {
 		"face": "none",
 		"colour": "red",
 		"suit": "diamonds",
-		"drawn": false
 		},
 	"nine_of_diamonds": 
 		{
@@ -382,7 +335,6 @@ var deck = {
 		"face": "none",
 		"colour": "red",
 		"suit": "diamonds",
-		"drawn": false
 		},
 	"ten_of_diamonds": 
 		{
@@ -390,7 +342,6 @@ var deck = {
 		"face": "none",
 		"colour": "red",
 		"suit": "diamonds",
-		"drawn": false
 		},
 	"jack_of_diamonds": 
 		{
@@ -398,7 +349,6 @@ var deck = {
 		"face": "jack",
 		"colour": "red",
 		"suit": "diamonds",
-		"drawn": false
 		},
 	"queen_of_diamonds": 
 		{
@@ -406,7 +356,6 @@ var deck = {
 		"face": "queen",
 		"colour": "red",
 		"suit": "diamonds",
-		"drawn": false
 		},
 	"king_of_diamonds": 
 		{
@@ -414,6 +363,24 @@ var deck = {
 		"face": "king",
 		"colour": "red",
 		"suit": "diamonds",
-		"drawn": false
 		},
 	}
+
+var deck = []
+
+func _ready():
+	shuffle()
+
+func shuffle():
+	deck.clear()
+	for card in deck_values:
+		deck.append(card)
+	# I don't understand why, but shuffle works like a real deck shuffle; if you only do one riffle it's not very well randomised!
+	deck.shuffle()
+	deck.shuffle()
+	deck.shuffle()
+	deck.shuffle()
+	deck.shuffle()
+	deck.shuffle()
+	deck.shuffle()
+	print("deck shuffled")
