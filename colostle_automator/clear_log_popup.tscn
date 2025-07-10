@@ -1,0 +1,65 @@
+[gd_scene load_steps=3 format=3 uid="uid://byjhad3aek23p"]
+
+[ext_resource type="StyleBox" uid="uid://bcerk0qreobrh" path="res://new_style_box_flat.tres" id="1_wt01t"]
+[ext_resource type="Script" uid="uid://bxyoc8prkhilr" path="res://clear_log_popup.gd" id="2_c7me4"]
+
+[node name="ClearLogPopup" type="PanelContainer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -243.0
+offset_top = -63.0
+offset_right = 243.0
+offset_bottom = 63.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("1_wt01t")
+script = ExtResource("2_c7me4")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="WarningMarginContainer" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Label" type="Label" parent="VBoxContainer/WarningMarginContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.293745, 0.231067, 1)
+theme_override_font_sizes/font_size = 32
+text = "Are you sure you want to clear the log?
+
+Warning: this cannot be undone"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="InputMarginContainer" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/InputMarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 20
+
+[node name="NoButton" type="Button" parent="VBoxContainer/InputMarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 26
+text = "No, go back"
+
+[node name="YesButton" type="Button" parent="VBoxContainer/InputMarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 26
+text = "Yes, clear log"
+
+[connection signal="button_up" from="VBoxContainer/InputMarginContainer/HBoxContainer/NoButton" to="." method="_on_no_button_button_up"]
+[connection signal="button_up" from="VBoxContainer/InputMarginContainer/HBoxContainer/YesButton" to="." method="_on_yes_button_button_up"]
