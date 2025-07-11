@@ -10,8 +10,6 @@ func _ready():
 	# Set an initial selection for the dropdown
 	options.select(1)
 
-	
-
 func draw_card():
 	# Get the option selected so we know what to return from the card
 	var selected = options.get_selected_id()
@@ -20,12 +18,11 @@ func draw_card():
 	var card = Globals.deck.pop_back()
 	# Write out the results
 	text_box.append_text("[p align=center]You drew [b][color=%s]%s[/color][/b][/p]" % [card["Color"],card["Card"]])
-	text_box.append_text("[p align=center][b]%s[/b]: %s\n\n" % [lookup, card[lookup]])
-	
-	
+	text_box.append_text("[p align=center][b]%s[/b]: %s.\n\n" % [lookup, card[lookup]])
 
 func _on_draw_button_up() -> void:
 	draw_card()
+	Globals.first_result = false
 
 func _on_shuffle_button_up() -> void:
 	Globals.shuffle()
@@ -34,3 +31,10 @@ func _on_shuffle_button_up() -> void:
 func _on_clear_button_up() -> void:
 	var popup = clear_log_popup.instantiate()
 	add_child(popup)
+
+func _on_option_button_item_selected(index: int) -> void:
+	# Add a seperator when the table is changed
+	if Globals.first_result == false: 
+		text_box.add_hr(90,5,Color(0.25,0.25,0.25,1),1)
+		text_box.append_text("\n\n")
+	

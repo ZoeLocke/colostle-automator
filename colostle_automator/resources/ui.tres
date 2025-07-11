@@ -1,0 +1,128 @@
+[gd_resource type="Theme" load_steps=12 format=3 uid="uid://bx2766408c4dq"]
+
+[ext_resource type="FontFile" uid="uid://5ekptci37r8k" path="res://resources/OpenDyslexic-Bold.otf" id="1_qa6oi"]
+[ext_resource type="StyleBox" uid="uid://b4lg71qbwkryp" path="res://resources/ui_disabled_style_box.tres" id="2_8yfhb"]
+[ext_resource type="StyleBox" uid="uid://bs2l68kire4hg" path="res://resources/ui_focus_style_box.tres" id="3_mo0i0"]
+[ext_resource type="StyleBox" uid="uid://cxx3ktu1j1bwq" path="res://resources/ui_hover_style_box.tres" id="4_tyv3d"]
+[ext_resource type="StyleBox" uid="uid://bpm37ihrwkl81" path="res://resources/ui_normal_style_box.tres" id="5_wja67"]
+[ext_resource type="Texture2D" uid="uid://draw5qvtbb68q" path="res://images/chevron.svg" id="6_mo0i0"]
+[ext_resource type="StyleBox" uid="uid://cfuh7edt1f73s" path="res://resources/clear_log_popup_style_box.tres" id="7_hsrkt"]
+[ext_resource type="FontFile" uid="uid://otmc4gjcoyhd" path="res://resources/OpenDyslexic-Regular.otf" id="7_tyv3d"]
+[ext_resource type="FontFile" uid="uid://c2t2776ax2rkb" path="res://resources/OpenDyslexic-Bold-Italic.otf" id="8_wja67"]
+[ext_resource type="StyleBox" uid="uid://brcjwvh7qbeit" path="res://resources/option_button_serparator_style_box.tres" id="9_71464"]
+[ext_resource type="FontFile" uid="uid://b8w72er55ywnn" path="res://resources/OpenDyslexic-Italic.otf" id="9_hsrkt"]
+
+[resource]
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/colors/font_disabled_color = Color(0.286684, 0.286684, 0.286684, 1)
+Button/colors/font_focus_color = Color(1, 1, 1, 1)
+Button/colors/font_hover_color = Color(1, 1, 1, 1)
+Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/font_outline_color = Color(1, 1, 1, 1)
+Button/colors/font_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_disabled_color = Color(1, 1, 1, 1)
+Button/colors/icon_focus_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_normal_color = Color(1, 1, 1, 1)
+Button/colors/icon_pressed_color = Color(1, 1, 1, 1)
+Button/constants/align_to_largest_stylebox = 0
+Button/constants/h_separation = 0
+Button/constants/icon_max_width = 0
+Button/constants/outline_size = 0
+Button/font_sizes/font_size = 16
+Button/fonts/font = ExtResource("1_qa6oi")
+Button/styles/disabled = ExtResource("2_8yfhb")
+Button/styles/focus = null
+Button/styles/hover = ExtResource("4_tyv3d")
+Button/styles/normal = ExtResource("5_wja67")
+Button/styles/pressed = ExtResource("3_mo0i0")
+Label/font_sizes/font_size = 26
+Label/fonts/font = ExtResource("1_qa6oi")
+OptionButton/colors/font_color = Color(1, 1, 1, 1)
+OptionButton/colors/font_disabled_color = Color(0.286275, 0.286275, 0.286275, 1)
+OptionButton/colors/font_focus_color = Color(1, 1, 1, 1)
+OptionButton/colors/font_hover_color = Color(1, 1, 1, 1)
+OptionButton/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+OptionButton/colors/font_outline_color = Color(1, 1, 1, 1)
+OptionButton/colors/font_pressed_color = Color(1, 1, 1, 1)
+OptionButton/constants/arrow_margin = 11
+OptionButton/constants/h_separation = 0
+OptionButton/constants/outline_size = 0
+OptionButton/font_sizes/font_size = 26
+OptionButton/fonts/font = null
+OptionButton/icons/arrow = ExtResource("6_mo0i0")
+OptionButton/styles/disabled = null
+OptionButton/styles/disabled_mirrored = null
+OptionButton/styles/focus = ExtResource("5_wja67")
+OptionButton/styles/hover = ExtResource("4_tyv3d")
+OptionButton/styles/hover_mirrored = null
+OptionButton/styles/normal = null
+OptionButton/styles/normal_mirrored = null
+OptionButton/styles/pressed = null
+OptionButton/styles/pressed_mirrored = null
+PanelContainer/styles/panel = ExtResource("7_hsrkt")
+PopupDialog/styles/panel = ExtResource("5_wja67")
+PopupMenu/colors/font_accelerator_color = Color(0, 0, 0, 1)
+PopupMenu/colors/font_color = Color(1, 1, 1, 1)
+PopupMenu/colors/font_disabled_color = Color(0.760297, 0.760297, 0.760297, 1)
+PopupMenu/colors/font_hover_color = Color(1, 1, 1, 1)
+PopupMenu/colors/font_outline_color = Color(0, 0, 0, 1)
+PopupMenu/colors/font_separator_color = Color(1, 1, 1, 1)
+PopupMenu/colors/font_separator_outline_color = Color(1, 1, 1, 1)
+PopupMenu/constants/h_separation = 7
+PopupMenu/constants/icon_max_width = 0
+PopupMenu/constants/indent = 5
+PopupMenu/constants/item_end_padding = 0
+PopupMenu/constants/item_start_padding = 5
+PopupMenu/constants/outline_size = 0
+PopupMenu/constants/v_separation = 5
+PopupMenu/font_sizes/font_separator_size = 26
+PopupMenu/font_sizes/font_size = 26
+PopupMenu/fonts/font = ExtResource("7_tyv3d")
+PopupMenu/fonts/font_separator = null
+PopupMenu/icons/checked = null
+PopupMenu/icons/checked_disabled = null
+PopupMenu/icons/radio_checked = null
+PopupMenu/icons/radio_checked_disabled = null
+PopupMenu/icons/radio_unchecked = null
+PopupMenu/icons/radio_unchecked_disabled = null
+PopupMenu/icons/submenu = null
+PopupMenu/icons/submenu_mirrored = null
+PopupMenu/icons/unchecked = null
+PopupMenu/icons/unchecked_disabled = null
+PopupMenu/styles/hover = ExtResource("4_tyv3d")
+PopupMenu/styles/labeled_separator_left = ExtResource("9_71464")
+PopupMenu/styles/labeled_separator_right = ExtResource("9_71464")
+PopupMenu/styles/panel = ExtResource("5_wja67")
+PopupMenu/styles/separator = ExtResource("9_71464")
+PopupPanel/styles/panel = ExtResource("5_wja67")
+RichTextLabel/colors/default_color = Color(0.210507, 0.210507, 0.210507, 1)
+RichTextLabel/colors/font_outline_color = Color(0, 0, 0, 1)
+RichTextLabel/colors/font_selected_color = Color(0, 0, 0, 1)
+RichTextLabel/colors/font_shadow_color = Color(0, 0, 0, 1)
+RichTextLabel/colors/selection_color = Color(0, 0, 0, 1)
+RichTextLabel/colors/table_border = Color(0, 0, 0, 1)
+RichTextLabel/colors/table_even_row_bg = Color(0, 0, 0, 1)
+RichTextLabel/colors/table_odd_row_bg = Color(0, 0, 0, 1)
+RichTextLabel/constants/line_separation = 5
+RichTextLabel/constants/outline_size = 0
+RichTextLabel/constants/shadow_offset_x = 0
+RichTextLabel/constants/shadow_offset_y = 0
+RichTextLabel/constants/shadow_outline_size = 0
+RichTextLabel/constants/table_h_separation = 0
+RichTextLabel/constants/table_v_separation = 0
+RichTextLabel/constants/text_highlight_h_padding = 0
+RichTextLabel/constants/text_highlight_v_padding = 0
+RichTextLabel/font_sizes/bold_font_size = 26
+RichTextLabel/font_sizes/bold_italics_font_size = 26
+RichTextLabel/font_sizes/italics_font_size = 26
+RichTextLabel/font_sizes/mono_font_size = 26
+RichTextLabel/font_sizes/normal_font_size = 26
+RichTextLabel/fonts/bold_font = ExtResource("1_qa6oi")
+RichTextLabel/fonts/bold_italics_font = ExtResource("8_wja67")
+RichTextLabel/fonts/italics_font = ExtResource("9_hsrkt")
+RichTextLabel/fonts/mono_font = null
+RichTextLabel/fonts/normal_font = ExtResource("7_tyv3d")
+RichTextLabel/styles/focus = null
+RichTextLabel/styles/normal = null

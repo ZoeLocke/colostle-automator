@@ -8,4 +8,5 @@ func _on_no_button_button_up() -> void:
 func _on_yes_button_button_up() -> void:
 	# Clears the log and then closes itself when you hit "yes"
 	get_tree().call_group("log","clear")
+	Globals.first_result = true
 	self.queue_free()
