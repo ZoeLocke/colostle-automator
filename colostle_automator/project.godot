@@ -33,6 +33,10 @@ window/stretch/scale_mode="integer"
 
 log="The textbox that displays the game log"
 
+[input_devices]
+
+pointing/android/disable_scroll_deadzone=true
+
 [rendering]
 
 renderer/rendering_method="mobile"
