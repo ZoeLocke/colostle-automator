@@ -38,4 +38,3 @@ func _on_option_button_item_selected(index: int) -> void:
 		text_box.add_hr(90,5,Color(0.25,0.25,0.25,1),1)
 		text_box.append_text("\n\n")
 		Globals.first_result = true
-	

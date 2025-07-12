@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=12 format=3 uid="uid://bx2766408c4dq"]
+[gd_resource type="Theme" load_steps=15 format=3 uid="uid://bx2766408c4dq"]
 
 [ext_resource type="FontFile" uid="uid://5ekptci37r8k" path="res://resources/OpenDyslexic-Bold.otf" id="1_qa6oi"]
 [ext_resource type="StyleBox" uid="uid://b4lg71qbwkryp" path="res://resources/ui_disabled_style_box.tres" id="2_8yfhb"]
@@ -11,6 +11,9 @@
 [ext_resource type="FontFile" uid="uid://c2t2776ax2rkb" path="res://resources/OpenDyslexic-Bold-Italic.otf" id="8_wja67"]
 [ext_resource type="StyleBox" uid="uid://brcjwvh7qbeit" path="res://resources/option_button_serparator_style_box.tres" id="9_71464"]
 [ext_resource type="FontFile" uid="uid://b8w72er55ywnn" path="res://resources/OpenDyslexic-Italic.otf" id="9_hsrkt"]
+[ext_resource type="StyleBox" uid="uid://lattcevhqbf7" path="res://resources/scroll_grabber_style_box.tres" id="12_gvpvx"]
+[ext_resource type="StyleBox" uid="uid://cqke7j6oeg1w4" path="res://resources/scroll_style_box.tres" id="12_s73pj"]
+[ext_resource type="StyleBox" uid="uid://cr8imsdvwobtb" path="res://resources/scroll_hover_style_box.tres" id="13_gvpvx"]
 
 [resource]
 Button/colors/font_color = Color(1, 1, 1, 1)
@@ -126,3 +129,6 @@ RichTextLabel/fonts/mono_font = null
 RichTextLabel/fonts/normal_font = ExtResource("7_tyv3d")
 RichTextLabel/styles/focus = null
 RichTextLabel/styles/normal = null
+VScrollBar/styles/grabber = ExtResource("12_gvpvx")
+VScrollBar/styles/grabber_highlight = ExtResource("13_gvpvx")
+VScrollBar/styles/scroll = ExtResource("12_s73pj")

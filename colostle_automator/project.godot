@@ -35,6 +35,7 @@ log="The textbox that displays the game log"
 
 [input_devices]
 
+pointing/android/enable_pan_and_scale_gestures=true
 pointing/android/disable_scroll_deadzone=true
 
 [rendering]
