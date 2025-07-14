@@ -1,13 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://dhaemyd3m7w5q"]
+[gd_scene load_steps=5 format=3 uid="uid://dhaemyd3m7w5q"]
 
 [ext_resource type="Script" uid="uid://b1kw3ne8xfjak" path="res://start.gd" id="1_ots34"]
-[ext_resource type="Texture2D" uid="uid://c7o7ketwdtca6" path="res://images/openglicon.png" id="2_1n0d2"]
+[ext_resource type="Texture2D" uid="uid://cwrck616f7ara" path="res://images/coloste-automator-logo.png" id="2_oiuna"]
 [ext_resource type="Theme" uid="uid://bx2766408c4dq" path="res://resources/ui.tres" id="2_y5hus"]
 [ext_resource type="StyleBox" uid="uid://qg1kv0bh7mx" path="res://resources/clear_button_style_box.tres" id="3_oiuna"]
-[ext_resource type="Texture2D" uid="uid://bc8atvpja287u" path="res://images/coloste-automator-logo.svg" id="3_y5hus"]
 
-[node name="UI" type="Control"]
-layout_mode = 3
+[node name="UI" type="AspectRatioContainer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -17,21 +15,65 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ots34")
 
-[node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
-layout_mode = 0
-offset_left = 139.0
-offset_right = 1778.0
-offset_bottom = 1074.0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="AspectRatioContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
 
-[node name="TextBoxContainer" type="MarginContainer" parent="AspectRatioContainer/VBoxContainer"]
+[node name="LogoMarginContainer" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Logo" type="TextureRect" parent="VBoxContainer/LogoMarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("2_oiuna")
+stretch_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="MetaMarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 30
+
+[node name="Meta" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/MetaMarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 2
+
+[node name="FeedbackButton" type="LinkButton" parent="VBoxContainer/HBoxContainer/MetaMarginContainer/Meta"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 1, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 1, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0.49803922, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0.49803922, 1)
+theme_override_font_sizes/font_size = 26
+text = "Send feedback"
+uri = "https://forms.gle/4VVDk9xyNaJssf7y6"
+
+[node name="ZoLoLink" type="LinkButton" parent="VBoxContainer/HBoxContainer/MetaMarginContainer/Meta"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 1, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 1, 1)
+theme_override_colors/font_pressed_color = Color(1.2513996e-06, 0, 0.4967038, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0.49803922, 1)
+theme_override_font_sizes/font_size = 26
+text = "By ZoLo"
+uri = "https://linktr.ee/zoelocke"
+
+[node name="CoreUI" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="TextBoxContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer/CoreUI"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/margin_top = 40
 
-[node name="TextBox" type="RichTextLabel" parent="AspectRatioContainer/VBoxContainer/TextBoxContainer" groups=["log"]]
+[node name="TextBox" type="RichTextLabel" parent="VBoxContainer/HBoxContainer/CoreUI/TextBoxContainer" groups=["log"]]
 clip_contents = false
 layout_mode = 2
 size_flags_vertical = 3
@@ -44,17 +86,17 @@ autowrap_trim_flags = 0
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ButtonContainer" type="MarginContainer" parent="AspectRatioContainer/VBoxContainer"]
+[node name="ButtonContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer/CoreUI"]
 layout_mode = 2
 theme_override_constants/margin_top = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="HBoxContainer" type="HBoxContainer" parent="AspectRatioContainer/VBoxContainer/ButtonContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/CoreUI/ButtonContainer"]
 layout_mode = 2
 theme_override_constants/separation = 20
 alignment = 1
 
-[node name="OptionButton" type="OptionButton" parent="AspectRatioContainer/VBoxContainer/ButtonContainer/HBoxContainer"]
+[node name="OptionButton" type="OptionButton" parent="VBoxContainer/HBoxContainer/CoreUI/ButtonContainer/HBoxContainer"]
 z_index = 2
 layout_mode = 2
 size_flags_horizontal = 3
@@ -129,7 +171,7 @@ popup/item_28/id = 28
 popup/item_29/text = "Attack Types"
 popup/item_29/id = 29
 
-[node name="DrawButton" type="Button" parent="AspectRatioContainer/VBoxContainer/ButtonContainer/HBoxContainer"]
+[node name="DrawButton" type="Button" parent="VBoxContainer/HBoxContainer/CoreUI/ButtonContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
@@ -138,25 +180,30 @@ theme = ExtResource("2_y5hus")
 theme_override_font_sizes/font_size = 36
 text = "Draw"
 
-[node name="ShuffleButton" type="Button" parent="."]
-layout_mode = 0
-offset_left = 1688.0
-offset_top = 16.0
-offset_right = 1887.0
-offset_bottom = 82.0
+[node name="ExtrasMarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_bottom = 10
+
+[node name="Extras" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/ExtrasMarginContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/separation = 20
+
+[node name="ShuffleButton" type="Button" parent="VBoxContainer/HBoxContainer/ExtrasMarginContainer/Extras"]
+layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
 mouse_default_cursor_shape = 2
 theme = ExtResource("2_y5hus")
+theme_override_colors/font_color = Color(0.29954746, 0.29954746, 0.29954743, 1)
 theme_override_font_sizes/font_size = 36
 text = "Shuffle"
+flat = true
 
-[node name="ClearButton" type="Button" parent="."]
-layout_mode = 0
-offset_left = 1720.0
-offset_top = 992.0
-offset_right = 1878.0
-offset_bottom = 1058.0
+[node name="ClearButton" type="Button" parent="VBoxContainer/HBoxContainer/ExtrasMarginContainer/Extras"]
+layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
 mouse_default_cursor_shape = 2
@@ -171,45 +218,7 @@ theme_override_styles/focus = ExtResource("3_oiuna")
 text = "Clear"
 flat = true
 
-[node name="FeedbackButton" type="LinkButton" parent="."]
-layout_mode = 0
-offset_left = 24.0
-offset_top = 1031.0
-offset_right = 207.0
-offset_bottom = 1067.0
-theme_override_colors/font_color = Color(0, 0, 1, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 1, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0.49803922, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0.49803922, 1)
-theme_override_font_sizes/font_size = 26
-text = "Send feedback"
-uri = "https://forms.gle/4VVDk9xyNaJssf7y6"
-
-[node name="ZoLoLink" type="LinkButton" parent="."]
-layout_mode = 0
-offset_left = 24.0
-offset_top = 995.0
-offset_right = 207.0
-offset_bottom = 1031.0
-theme_override_colors/font_color = Color(0, 0, 1, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 1, 1)
-theme_override_colors/font_pressed_color = Color(1.2513996e-06, 0, 0.4967038, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0.49803922, 1)
-theme_override_font_sizes/font_size = 26
-text = "By ZoLo"
-uri = "https://linktr.ee/zoelocke"
-
-[node name="Openglicon" type="Sprite2D" parent="."]
-position = Vector2(146, 892)
-scale = Vector2(0.342404, 0.342404)
-texture = ExtResource("2_1n0d2")
-
-[node name="Coloste-automator-logo" type="Sprite2D" parent="."]
-position = Vector2(207, 72)
-scale = Vector2(0.937352, 0.937352)
-texture = ExtResource("3_y5hus")
-
-[connection signal="item_selected" from="AspectRatioContainer/VBoxContainer/ButtonContainer/HBoxContainer/OptionButton" to="." method="_on_option_button_item_selected"]
-[connection signal="button_up" from="AspectRatioContainer/VBoxContainer/ButtonContainer/HBoxContainer/DrawButton" to="." method="_on_draw_button_up"]
-[connection signal="button_up" from="ShuffleButton" to="." method="_on_shuffle_button_up"]
-[connection signal="button_up" from="ClearButton" to="." method="_on_clear_button_up"]
+[connection signal="item_selected" from="VBoxContainer/HBoxContainer/CoreUI/ButtonContainer/HBoxContainer/OptionButton" to="." method="_on_option_button_item_selected"]
+[connection signal="button_up" from="VBoxContainer/HBoxContainer/CoreUI/ButtonContainer/HBoxContainer/DrawButton" to="." method="_on_draw_button_up"]
+[connection signal="button_up" from="VBoxContainer/HBoxContainer/ExtrasMarginContainer/Extras/ShuffleButton" to="." method="_on_shuffle_button_up"]
+[connection signal="button_up" from="VBoxContainer/HBoxContainer/ExtrasMarginContainer/Extras/ClearButton" to="." method="_on_clear_button_up"]

@@ -5,8 +5,8 @@ var text_box
 var clear_log_popup = preload("res://clear_log_popup.tscn")
 
 func _ready():
-	options = $AspectRatioContainer/VBoxContainer/ButtonContainer/HBoxContainer/OptionButton
-	text_box = $AspectRatioContainer/VBoxContainer/TextBoxContainer/TextBox
+	options = $VBoxContainer/HBoxContainer/CoreUI/ButtonContainer/HBoxContainer/OptionButton
+	text_box = $VBoxContainer/HBoxContainer/CoreUI/TextBoxContainer/TextBox
 	# Set an initial selection for the dropdown
 	options.select(1)
 
@@ -27,7 +27,8 @@ func _on_draw_button_up() -> void:
 func _on_shuffle_button_up() -> void:
 	Globals.shuffle()
 	text_box.append_text("[p align=center][color=dark_green][i]You have shuffled the deck[/i][/color][/p]\n\n")
-
+	$VBoxContainer/HBoxContainer/ExtrasMarginContainer/Extras/ShuffleButton.release_focus()
+	
 func _on_clear_button_up() -> void:
 	var popup = clear_log_popup.instantiate()
 	add_child(popup)
