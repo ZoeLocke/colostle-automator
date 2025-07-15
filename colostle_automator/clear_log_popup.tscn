@@ -9,12 +9,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -243.0
-offset_top = -63.0
-offset_right = 243.0
-offset_bottom = 63.0
+offset_left = -257.0
+offset_top = -214.0
+offset_right = 252.0
+offset_bottom = 217.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 theme = ExtResource("1_wt01t")
 script = ExtResource("2_c7me4")
 
@@ -37,6 +39,7 @@ text = "Are you sure you want to clear the log?
 Warning: this cannot be undone"
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="InputMarginContainer" type="MarginContainer" parent="VBoxContainer"]
 layout_mode = 2
@@ -44,24 +47,25 @@ theme_override_constants/margin_left = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/InputMarginContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_constants/separation = 20
-
-[node name="NoButton" type="Button" parent="VBoxContainer/InputMarginContainer/HBoxContainer"]
+[node name="NoButton" type="Button" parent="VBoxContainer/InputMarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_default_cursor_shape = 2
 theme_override_font_sizes/font_size = 26
 text = "No, go back"
 
-[node name="YesButton" type="Button" parent="VBoxContainer/InputMarginContainer/HBoxContainer"]
+[node name="InputMarginContainer2" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="YesButton" type="Button" parent="VBoxContainer/InputMarginContainer2"]
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_default_cursor_shape = 2
 theme_override_font_sizes/font_size = 26
 text = "Yes, clear log"
 
-[connection signal="button_up" from="VBoxContainer/InputMarginContainer/HBoxContainer/NoButton" to="." method="_on_no_button_button_up"]
-[connection signal="button_up" from="VBoxContainer/InputMarginContainer/HBoxContainer/YesButton" to="." method="_on_yes_button_button_up"]
+[connection signal="button_up" from="VBoxContainer/InputMarginContainer/NoButton" to="." method="_on_no_button_button_up"]
+[connection signal="button_up" from="VBoxContainer/InputMarginContainer2/YesButton" to="." method="_on_yes_button_button_up"]
