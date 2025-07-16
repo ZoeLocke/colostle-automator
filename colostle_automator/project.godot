@@ -31,6 +31,8 @@ window/stretch/scale_mode="integer"
 [global_group]
 
 log="The textbox that displays the game log"
+popup=""
+main=""
 
 [input_devices]
 
