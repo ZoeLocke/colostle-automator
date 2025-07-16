@@ -54,7 +54,7 @@ scroll_following = true
 autowrap_mode = 2
 autowrap_trim_flags = 0
 horizontal_alignment = 1
-vertical_alignment = 2
+vertical_alignment = 1
 
 [node name="OptionButton" type="Button" parent="MarginContainer/VBoxContainer"]
 z_index = 2

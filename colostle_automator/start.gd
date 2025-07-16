@@ -29,7 +29,7 @@ func draw_card():
 	# "draw a card" by popping the last entry, this is used over pop_front as pop_front triggers a rebuild of indexes
 	var card = Globals.deck.pop_back()
 	# Write out the results
-	text_box.append_text("[p align=center]You drew [b][color=%s]%s[/color][/b][/p]" % [card["Color"],card["Card"]])
+	text_box.append_text("[p align=center][color=%s][b]%s[/b][font=res://resources/NotoColorEmoji-Regular.ttf]%s[/font][/color][/p]" % [card["Color"],card["Face"],card["Suit"]])
 	text_box.append_text("[p align=center][b]%s[/b]: %s.\n\n" % [Globals.selected, card[Globals.selected]])
 
 func _on_draw_button_up() -> void:
