@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://d178w6n0bc5hm"]
+
+[ext_resource type="FontFile" uid="uid://djm0kmbbqtm1h" path="res://resources/NotoColorEmoji-Regular.ttf" id="1_b46gb"]
+
+[resource]
+default_font = ExtResource("1_b46gb")
+default_font_size = 28

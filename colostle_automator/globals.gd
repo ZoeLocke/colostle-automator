@@ -8,7 +8,7 @@ var combat_scores = {
 	"medium rook": 3,
 	"massive rook": 5
 }
-var lookup_options = {"🌐 WORLD 🌐": ["Explore","Ocean Explore","Items","Events","Weather","NPC Names","NPC Looks","NPC Characteristics","City Building","Rooklings"],"📖 STORY 📖": ["Default Oracle","Two Player Oracle","Complications","Storytelling Incites","Storytelling Subjects","Storytelling Twists","Hunters Guild Quest Locations","Hunters Guild Quest Distances","Hunters Guild Quest Twists","Hunters Guild Quest Rewards"],"⚔️ COMBAT ⚔️": ["Opponent Intentions","Weapon Types","Magic Types","Body Types","Rewards","Combat Modifier","Attack Types"]}
+var lookup_options = {"WORLD": ["🌐",["Explore","Ocean Explore","Items","Events","Weather","NPC Names","NPC Looks","NPC Characteristics","City Building","Rooklings"]],"STORY": ["📖",["Default Oracle","Two Player Oracle","Complications","Storytelling Incites","Storytelling Subjects","Storytelling Twists","Hunters Guild Quest Locations","Hunters Guild Quest Distances","Hunters Guild Quest Twists","Hunters Guild Quest Rewards"]],"COMBAT": ["⚔️",["Opponent Intentions","Weapon Types","Magic Types","Body Types","Rewards","Combat Modifier","Attack Types"]]}
 # Temp array for holding a dupe of the deck that can have values popped from it
 var deck = []
 # First result is a workaround of an annoying issue where I couldn't check if the text box was empty; I only want to draw a new line when a user changes the table they are drawing from if there is already data in the text box

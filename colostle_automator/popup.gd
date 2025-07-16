@@ -10,10 +10,13 @@ func _ready() -> void:
 	for item in popup_options:
 		# Create the header label
 		var header = popup_label.instantiate()
+		var icon = popup_options[item][0]
 		container.add_child(header)
-		header.get_node("Label").text = item
+		header.get_node("HBoxContainer/IconBefore").text = icon
+		header.get_node("HBoxContainer/Label").text = item
+		header.get_node("HBoxContainer/IconAfter").text = icon
 		# Loop over the current lookup group
-		for sub_item in popup_options[item]:
+		for sub_item in popup_options[item][1]:
 			# Create a button for each lookup item
 			var button = popup_button.instantiate()
 			container.add_child(button)

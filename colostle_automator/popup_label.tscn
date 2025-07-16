@@ -1,14 +1,31 @@
-[gd_scene load_steps=2 format=3 uid="uid://xm57fefshkm0"]
+[gd_scene load_steps=3 format=3 uid="uid://xm57fefshkm0"]
 
 [ext_resource type="Theme" uid="uid://bx2766408c4dq" path="res://resources/ui.tres" id="1_lrww6"]
+[ext_resource type="Theme" uid="uid://d178w6n0bc5hm" path="res://resources/emoji_label.tres" id="1_modb1"]
 
 [node name="MarginContainer" type="MarginContainer"]
 offset_right = 40.0
 offset_bottom = 40.0
 theme_override_constants/margin_top = 20
 
-[node name="Label" type="Label" parent="."]
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 2
+
+[node name="IconBefore" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+theme = ExtResource("1_modb1")
+text = "🌐"
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
 theme = ExtResource("1_lrww6")
-text = "🌐 World 🌐"
+text = "World"
 horizontal_alignment = 1
+
+[node name="IconAfter" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_modb1")
+text = "🌐"
