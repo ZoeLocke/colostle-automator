@@ -18,9 +18,9 @@
 [resource]
 Button/colors/font_color = Color(1, 1, 1, 1)
 Button/colors/font_disabled_color = Color(0.286684, 0.286684, 0.286684, 1)
-Button/colors/font_focus_color = Color(1, 1, 1, 1)
-Button/colors/font_hover_color = Color(1, 1, 1, 1)
-Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/font_focus_color = Color(0.5985247, 0.59852463, 0.59852463, 1)
+Button/colors/font_hover_color = Color(0.6, 0.6, 0.6, 1)
+Button/colors/font_hover_pressed_color = Color(0.6, 0.6, 0.6, 1)
 Button/colors/font_outline_color = Color(1, 1, 1, 1)
 Button/colors/font_pressed_color = Color(1, 1, 1, 1)
 Button/colors/icon_disabled_color = Color(1, 1, 1, 1)
