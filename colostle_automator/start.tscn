@@ -1,10 +1,44 @@
-[gd_scene load_steps=6 format=3 uid="uid://dhaemyd3m7w5q"]
+[gd_scene load_steps=8 format=3 uid="uid://dhaemyd3m7w5q"]
 
 [ext_resource type="Script" uid="uid://b1kw3ne8xfjak" path="res://start.gd" id="1_ots34"]
 [ext_resource type="Texture2D" uid="uid://cwrck616f7ara" path="res://images/coloste-automator-logo.png" id="2_oiuna"]
 [ext_resource type="Theme" uid="uid://bx2766408c4dq" path="res://resources/ui.tres" id="2_y5hus"]
 [ext_resource type="StyleBox" uid="uid://qg1kv0bh7mx" path="res://resources/clear_button_style_box.tres" id="3_oiuna"]
 [ext_resource type="Texture2D" uid="uid://draw5qvtbb68q" path="res://images/chevron.svg" id="4_oiuna"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oiuna"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0.75)
+draw_center = false
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4a3qj"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0.75)
+draw_center = false
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
 
 [node name="UI" type="Control" groups=["main"]]
 layout_mode = 3
@@ -84,6 +118,8 @@ size_flags_horizontal = 3
 mouse_default_cursor_shape = 2
 theme = ExtResource("2_y5hus")
 theme_override_colors/font_color = Color(0.29803923, 0.29803923, 0.29803923, 1)
+theme_override_colors/font_disabled_color = Color(0.286684, 0.286684, 0.286684, 1)
+theme_override_styles/focus = SubResource("StyleBoxFlat_oiuna")
 text = "Draw"
 flat = true
 
@@ -94,6 +130,8 @@ size_flags_vertical = 4
 mouse_default_cursor_shape = 2
 theme = ExtResource("2_y5hus")
 theme_override_colors/font_color = Color(0.29954746, 0.29954746, 0.29954743, 1)
+theme_override_colors/font_hover_color = Color(0.28627452, 0.28627452, 0.28627452, 1)
+theme_override_styles/focus = SubResource("StyleBoxFlat_4a3qj")
 text = "Shuffle"
 flat = true
 

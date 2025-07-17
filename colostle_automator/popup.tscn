@@ -23,6 +23,7 @@ size_flags_vertical = 3
 
 [node name="FoldableContainer" type="FoldableContainer" parent="VBoxContainer" groups=["filter"]]
 layout_mode = 2
+mouse_default_cursor_shape = 2
 theme = ExtResource("1_0fd7b")
 folded = true
 title = "Filter Lookups"

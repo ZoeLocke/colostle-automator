@@ -1,21 +1,24 @@
-[gd_resource type="Theme" load_steps=17 format=3 uid="uid://bx2766408c4dq"]
+[gd_resource type="Theme" load_steps=20 format=3 uid="uid://bx2766408c4dq"]
 
 [ext_resource type="FontFile" uid="uid://5ekptci37r8k" path="res://resources/OpenDyslexic-Bold.otf" id="1_qa6oi"]
 [ext_resource type="StyleBox" uid="uid://b4lg71qbwkryp" path="res://resources/ui_disabled_style_box.tres" id="2_8yfhb"]
 [ext_resource type="StyleBox" uid="uid://bs2l68kire4hg" path="res://resources/ui_focus_style_box.tres" id="3_mo0i0"]
 [ext_resource type="StyleBox" uid="uid://cxx3ktu1j1bwq" path="res://resources/ui_hover_style_box.tres" id="4_tyv3d"]
 [ext_resource type="StyleBox" uid="uid://bpm37ihrwkl81" path="res://resources/ui_normal_style_box.tres" id="5_wja67"]
-[ext_resource type="StyleBox" uid="uid://c6ik2fpqi0o8u" path="res://foldablecoontainer_box_flat.tres" id="6_dl0hs"]
+[ext_resource type="Texture2D" uid="uid://j7u03jyri8hy" path="res://images/tick.svg" id="6_jecep"]
 [ext_resource type="Texture2D" uid="uid://draw5qvtbb68q" path="res://images/chevron.svg" id="6_mo0i0"]
+[ext_resource type="Texture2D" uid="uid://cjp0omj7rwaqb" path="res://images/empty.svg" id="7_6e3oo"]
 [ext_resource type="StyleBox" uid="uid://cfuh7edt1f73s" path="res://resources/clear_log_popup_style_box.tres" id="7_hsrkt"]
+[ext_resource type="Texture2D" uid="uid://l4y3ykjvthjn" path="res://images/chevron_up.svg" id="7_jecep"]
 [ext_resource type="FontFile" uid="uid://otmc4gjcoyhd" path="res://resources/OpenDyslexic-Regular.otf" id="7_tyv3d"]
 [ext_resource type="FontFile" uid="uid://c2t2776ax2rkb" path="res://resources/OpenDyslexic-Bold-Italic.otf" id="8_wja67"]
 [ext_resource type="StyleBox" uid="uid://brcjwvh7qbeit" path="res://resources/option_button_serparator_style_box.tres" id="9_71464"]
 [ext_resource type="FontFile" uid="uid://b8w72er55ywnn" path="res://resources/OpenDyslexic-Italic.otf" id="9_hsrkt"]
+[ext_resource type="StyleBox" uid="uid://5lyjr5xsfhdb" path="res://resources/foldable_focus.tres" id="9_jecep"]
 [ext_resource type="StyleBox" uid="uid://lattcevhqbf7" path="res://resources/scroll_grabber_style_box.tres" id="12_gvpvx"]
 [ext_resource type="StyleBox" uid="uid://cqke7j6oeg1w4" path="res://resources/scroll_style_box.tres" id="12_s73pj"]
-[ext_resource type="StyleBox" uid="uid://22hem8wneh8v" path="res://popup_stylebox.tres" id="12_seekh"]
 [ext_resource type="StyleBox" uid="uid://cr8imsdvwobtb" path="res://resources/scroll_hover_style_box.tres" id="13_gvpvx"]
+[ext_resource type="StyleBox" uid="uid://22hem8wneh8v" path="res://resources/popup_stylebox.tres" id="14_jecep"]
 
 [resource]
 Button/colors/font_color = Color(1, 1, 1, 1)
@@ -38,14 +41,29 @@ Button/constants/outline_size = 0
 Button/font_sizes/font_size = 28
 Button/fonts/font = ExtResource("1_qa6oi")
 Button/styles/disabled = ExtResource("2_8yfhb")
-Button/styles/focus = null
+Button/styles/focus = ExtResource("3_mo0i0")
 Button/styles/hover = ExtResource("4_tyv3d")
 Button/styles/normal = ExtResource("5_wja67")
 Button/styles/pressed = ExtResource("3_mo0i0")
+CheckBox/icons/checked = ExtResource("6_jecep")
+CheckBox/icons/unchecked = ExtResource("7_6e3oo")
+CheckBox/styles/focus = ExtResource("5_wja67")
+CheckBox/styles/hover = ExtResource("4_tyv3d")
+CheckBox/styles/hover_pressed = ExtResource("4_tyv3d")
+CheckBox/styles/normal = ExtResource("9_jecep")
+CheckBox/styles/pressed = ExtResource("5_wja67")
+FoldableContainer/colors/collapsed_font_color = Color(1, 1, 1, 1)
+FoldableContainer/colors/font_color = Color(1, 1, 1, 1)
+FoldableContainer/colors/hover_font_color = Color(0.95, 0.95, 0.95, 1)
 FoldableContainer/font_sizes/font_size = 32
 FoldableContainer/fonts/font = ExtResource("1_qa6oi")
-FoldableContainer/styles/panel = ExtResource("6_dl0hs")
-FoldableContainer/styles/title_panel = ExtResource("6_dl0hs")
+FoldableContainer/icons/expanded_arrow = ExtResource("7_jecep")
+FoldableContainer/icons/folded_arrow = ExtResource("6_mo0i0")
+FoldableContainer/styles/focus = ExtResource("9_jecep")
+FoldableContainer/styles/panel = ExtResource("14_jecep")
+FoldableContainer/styles/title_collapsed_panel = ExtResource("5_wja67")
+FoldableContainer/styles/title_hover_panel = ExtResource("4_tyv3d")
+FoldableContainer/styles/title_panel = ExtResource("14_jecep")
 Label/font_sizes/font_size = 28
 Label/fonts/font = ExtResource("1_qa6oi")
 LinkButton/font_sizes/font_size = 28
@@ -137,8 +155,8 @@ RichTextLabel/fonts/mono_font = null
 RichTextLabel/fonts/normal_font = ExtResource("7_tyv3d")
 RichTextLabel/styles/focus = null
 RichTextLabel/styles/normal = null
-ScrollContainer/styles/focus = ExtResource("3_mo0i0")
-ScrollContainer/styles/panel = ExtResource("12_seekh")
+ScrollContainer/styles/focus = ExtResource("14_jecep")
+ScrollContainer/styles/panel = ExtResource("14_jecep")
 VScrollBar/styles/grabber = ExtResource("12_gvpvx")
 VScrollBar/styles/grabber_highlight = ExtResource("13_gvpvx")
 VScrollBar/styles/scroll = ExtResource("12_s73pj")

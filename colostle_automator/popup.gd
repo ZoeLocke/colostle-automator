@@ -1,6 +1,7 @@
 extends ScrollContainer
 
-var popup_options = Globals.lookup_options
+signal reload_popup
+
 var popup_label = preload("res://popup_label.tscn")
 var popup_button = preload("res://popup_button.tscn")
 var popup_checkbox = preload("res://popup_checkbox.tscn")
@@ -14,18 +15,10 @@ func _ready() -> void:
 	checkbox_container = $VBoxContainer/FoldableContainer/VBoxContainer
 	fold_container = $VBoxContainer/FoldableContainer
 	build_popup()
-	Globals.first_time = false
-
+	
 func build_popup():
-	# Clear the nodes the filter button group so we don't accidentally duplicate any nodes when rebuilding the popup
-	for node in get_tree().get_nodes_in_group("filter_buttons"):
-		node.queue_free()
-	# Delete the existing apply button if it exists so we don't duplicate it
-	for node in get_tree().get_nodes_in_group("apply_button"):
-		node.queue_free()
-	# Loop over the lookup groups
-	for item in popup_options:
-		#--Populate lookup filter options--#
+	#--Populate lookup filter options--#
+	for item in Globals.lookup_options:
 		# Add a checkbox object
 		var checkbox = popup_checkbox.instantiate()
 		checkbox_container.add_child(checkbox)
@@ -33,33 +26,44 @@ func build_popup():
 		var checkbox_node = checkbox.get_node("CheckBox")
 		checkbox_node.text = item
 		# If the checkbox is for a filter that is currently "active", set the button pressed
-		if checkbox_node.text in Globals.filter or Globals.first_time == true:
+		if checkbox_node.text in Globals.filter:
 			checkbox_node.button_pressed = true
 		# Add the button to the list of buttons
 		checkbox.add_to_group("filter_buttons")
-		#--Populate lookup options--#
-		# Create the header label
-		var header = popup_label.instantiate()
-		var icon = popup_options[item][0]
-		container.add_child(header)
-		# Set the text and icon for the header
-		header.get_node("HBoxContainer/IconBefore").text = icon
-		header.get_node("HBoxContainer/Label").text = item
-		header.get_node("HBoxContainer/IconAfter").text = icon
-		# Loop over the current lookup group
-		for sub_item in popup_options[item][1]:
-			# Create a button for each lookup item
-			var button = popup_button.instantiate()
-			container.add_child(button)
-			button.get_node("Button").text = sub_item
+	#--Populate lookup options--#
+	for item in Globals.lookup_options:
+		if item in Globals.filter:
+			# Create the header label
+			var header = popup_label.instantiate()
+			var icon = Globals.lookup_options[item][0]
+			container.add_child(header)
+			# Set the text and icon for the header
+			header.get_node("HBoxContainer/IconBefore").text = icon
+			header.get_node("HBoxContainer/Label").text = item
+			header.get_node("HBoxContainer/IconAfter").text = icon
+			# Add header to header group
+			#header.add_to_group("lookup_headers")
+			# Loop over the current lookup group
+			for sub_item in Globals.lookup_options[item][1]:
+				# Create a button for each lookup item
+				var button = popup_button.instantiate()
+				container.add_child(button)
+				button.get_node("Button").text = sub_item
+				#button.add_to_group("lookup_buttons")
 	# Create the apply button
 	var apply = apply_button.instantiate()
 	checkbox_container.add_child(apply)
 	# Add to the apply button group to make it easier to delete it when re-run
-	apply.add_to_group("apply_button")
+	#apply.add_to_group("apply_button")
 	# Connect the signal
 	apply.apply_pressed.connect(_on_filters_applied)
 
 func _on_filters_applied():
-	fold_container.folded = true
-	build_popup()
+	# Update the filter list with the text of each ticked button (clearing it first to avoid duplication)
+	Globals.filter.clear()
+	for node in get_tree().get_nodes_in_group("filter_buttons"):
+		var button = node.get_node("CheckBox")
+		if button.button_pressed:
+			Globals.filter.append(button.text)
+	# Trigger the reload of the popup with the new data
+	emit_signal("reload_popup")

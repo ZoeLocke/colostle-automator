@@ -36,6 +36,8 @@ main=""
 filter=""
 filter_buttons=""
 apply_button=""
+lookup_buttons=""
+lookup_headers=""
 
 [input_devices]
 
