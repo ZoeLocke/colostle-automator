@@ -173,6 +173,8 @@ theme_override_colors/font_hover_color = Color(0, 0, 0.49803922, 1)
 text = "Feedback"
 uri = "https://forms.gle/4VVDk9xyNaJssf7y6"
 
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
 [connection signal="button_up" from="MarginContainer/VBoxContainer/OptionButton" to="." method="_on_lookup_button_up"]
 [connection signal="button_up" from="MarginContainer/VBoxContainer/ButtonMarginContainer/HBoxContainer/DrawButton" to="." method="_on_draw_button_up"]
 [connection signal="button_up" from="MarginContainer/VBoxContainer/ButtonMarginContainer/HBoxContainer/ShuffleButton" to="." method="_on_shuffle_button_up"]

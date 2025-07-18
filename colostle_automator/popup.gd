@@ -9,6 +9,7 @@ var apply_button = preload("res://filter_confirm_button.tscn")
 var container
 var checkbox_container
 var fold_container
+var mouseover
 
 func _ready() -> void:
 	container = $VBoxContainer
@@ -67,3 +68,15 @@ func _on_filters_applied():
 			Globals.filter.append(button.text)
 	# Trigger the reload of the popup with the new data
 	emit_signal("reload_popup")
+
+# The following three functions work together to allow closing the popup by clicking outside it's area
+func _on_mouse_entered() -> void:
+	mouseover = true
+
+func _on_mouse_exited() -> void:
+	mouseover = false
+	
+func _input(event):
+	if event is InputEventMouseButton and event.button_index == 1 and event.pressed and not mouseover:
+		queue_free()
+#-------------------------------
