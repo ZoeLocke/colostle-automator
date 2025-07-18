@@ -1,6 +1,7 @@
 extends ScrollContainer
 
 signal reload_popup
+signal lookup_picked
 
 var popup_label = preload("res://popup_label.tscn")
 var popup_button = preload("res://popup_button.tscn")
@@ -50,6 +51,7 @@ func build_popup():
 				var button = popup_button.instantiate()
 				container.add_child(button)
 				button.get_node("Button").text = sub_item
+				button.lookup_picked.connect(_on_lookup_picked)
 				#button.add_to_group("lookup_buttons")
 	# Create the apply button
 	var apply = apply_button.instantiate()
@@ -68,15 +70,7 @@ func _on_filters_applied():
 			Globals.filter.append(button.text)
 	# Trigger the reload of the popup with the new data
 	emit_signal("reload_popup")
-
-# The following three functions work together to allow closing the popup by clicking outside it's area
-func _on_mouse_entered() -> void:
-	mouseover = true
-
-func _on_mouse_exited() -> void:
-	mouseover = false
 	
-func _input(event):
-	if event is InputEventMouseButton and event.button_index == 1 and event.pressed and not mouseover:
-		queue_free()
-#-------------------------------
+func _on_lookup_picked():
+	emit_signal("lookup_picked")
+	self.queue_free()
