@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=23 format=3 uid="uid://bx2766408c4dq"]
+[gd_resource type="Theme" load_steps=21 format=3 uid="uid://bx2766408c4dq"]
 
 [ext_resource type="FontFile" uid="uid://5ekptci37r8k" path="res://resources/OpenDyslexic-Bold.otf" id="1_qa6oi"]
 [ext_resource type="StyleBox" uid="uid://b4lg71qbwkryp" path="res://resources/ui_disabled_style_box.tres" id="2_8yfhb"]
@@ -14,9 +14,7 @@
 [ext_resource type="StyleBox" uid="uid://brcjwvh7qbeit" path="res://resources/option_button_serparator_style_box.tres" id="9_71464"]
 [ext_resource type="FontFile" uid="uid://b8w72er55ywnn" path="res://resources/OpenDyslexic-Italic.otf" id="9_hsrkt"]
 [ext_resource type="StyleBox" uid="uid://5lyjr5xsfhdb" path="res://resources/foldable_focus.tres" id="9_jecep"]
-[ext_resource type="StyleBox" uid="uid://lattcevhqbf7" path="res://resources/scroll_grabber_style_box.tres" id="12_gvpvx"]
 [ext_resource type="StyleBox" uid="uid://cqke7j6oeg1w4" path="res://resources/scroll_style_box.tres" id="12_s73pj"]
-[ext_resource type="StyleBox" uid="uid://cr8imsdvwobtb" path="res://resources/scroll_hover_style_box.tres" id="13_gvpvx"]
 [ext_resource type="StyleBox" uid="uid://22hem8wneh8v" path="res://resources/popup_stylebox.tres" id="14_jecep"]
 [ext_resource type="StyleBox" uid="uid://chqf84fy7x8rx" path="res://resources/textbox_style_box_flat.tres" id="17_y78w6"]
 
@@ -194,6 +192,7 @@ TooltipLabel/colors/font_color = Color(1, 1, 1, 1)
 TooltipLabel/font_sizes/font_size = 18
 TooltipLabel/fonts/font = ExtResource("7_tyv3d")
 TooltipPanel/styles/panel = SubResource("StyleBoxFlat_6e3oo")
-VScrollBar/styles/grabber = ExtResource("12_gvpvx")
-VScrollBar/styles/grabber_highlight = ExtResource("13_gvpvx")
+VScrollBar/styles/grabber = ExtResource("5_wja67")
+VScrollBar/styles/grabber_highlight = ExtResource("4_tyv3d")
+VScrollBar/styles/grabber_pressed = ExtResource("3_mo0i0")
 VScrollBar/styles/scroll = ExtResource("12_s73pj")
