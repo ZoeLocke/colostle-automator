@@ -1,4 +1,4 @@
-extends ScrollContainer
+extends MarginContainer
 
 signal reload_popup
 signal lookup_picked
@@ -13,9 +13,9 @@ var fold_container
 var mouseover
 
 func _ready() -> void:
-	container = $VBoxContainer
-	checkbox_container = $VBoxContainer/FoldableContainer/VBoxContainer
-	fold_container = $VBoxContainer/FoldableContainer
+	container = $ScrollContainer/VBoxContainer
+	checkbox_container = $ScrollContainer/VBoxContainer/MarginContainer/FoldableContainer/VBoxContainer
+	fold_container = $ScrollContainer/VBoxContainer/FoldableContainer
 	build_popup()
 	
 func build_popup():

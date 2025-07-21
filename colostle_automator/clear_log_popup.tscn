@@ -1,7 +1,50 @@
-[gd_scene load_steps=3 format=3 uid="uid://byjhad3aek23p"]
+[gd_scene load_steps=8 format=3 uid="uid://byjhad3aek23p"]
 
 [ext_resource type="Theme" uid="uid://bx2766408c4dq" path="res://resources/ui.tres" id="1_wt01t"]
 [ext_resource type="Script" uid="uid://bxyoc8prkhilr" path="res://clear_log_popup.gd" id="2_c7me4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wt01t"]
+bg_color = Color(0.48235294, 0.48235294, 0.4745098, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c7me4"]
+content_margin_left = 20.0
+content_margin_right = 20.0
+bg_color = Color(0.78039217, 0.34901962, 0.32156864, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_63nk1"]
+content_margin_left = 20.0
+content_margin_right = 20.0
+bg_color = Color(0.6431373, 0.26666668, 0.23921569, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4bjam"]
+content_margin_left = 20.0
+content_margin_right = 20.0
+bg_color = Color(0.6431373, 0.26666668, 0.23921569, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e1lsn"]
+content_margin_left = 20.0
+content_margin_right = 20.0
+bg_color = Color(0.6431373, 0.26666668, 0.23921569, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
 
 [node name="ClearLogPopup" type="PanelContainer"]
 anchors_preset = 8
@@ -34,7 +77,8 @@ theme_override_constants/margin_bottom = 20
 [node name="Label" type="Label" parent="VBoxContainer/WarningMarginContainer"]
 layout_mode = 2
 theme = ExtResource("1_wt01t")
-theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_wt01t")
 text = "Are you sure you want to clear the log?
 
 Warning: this cannot be undone"
@@ -65,7 +109,12 @@ theme_override_constants/margin_bottom = 20
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 26
+theme_override_styles/normal = SubResource("StyleBoxFlat_c7me4")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_63nk1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4bjam")
+theme_override_styles/focus = SubResource("StyleBoxFlat_e1lsn")
 text = "Yes, clear log"
 
 [connection signal="button_up" from="VBoxContainer/InputMarginContainer/NoButton" to="." method="_on_no_button_button_up"]

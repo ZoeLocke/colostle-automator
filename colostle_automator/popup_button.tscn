@@ -1,17 +1,32 @@
-[gd_scene load_steps=3 format=3 uid="uid://bf3yw0vaq8lmn"]
+[gd_scene load_steps=4 format=3 uid="uid://bf3yw0vaq8lmn"]
 
 [ext_resource type="Theme" uid="uid://bx2766408c4dq" path="res://resources/ui.tres" id="1_0usx8"]
 [ext_resource type="Script" uid="uid://biji5y56guvy6" path="res://popup_button.gd" id="1_7l77g"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7l77g"]
+content_margin_left = 20.0
+content_margin_right = 20.0
+bg_color = Color(0.48260698, 0.4826088, 0.4737569, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
 
 [node name="MarginContainer" type="MarginContainer"]
 offset_right = 40.0
 offset_bottom = 40.0
 theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
 script = ExtResource("1_7l77g")
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 2
+size_flags_vertical = 4
+mouse_default_cursor_shape = 2
 theme = ExtResource("1_0usx8")
+theme_override_styles/normal = SubResource("StyleBoxFlat_7l77g")
 text = "Ocean Explore"
+autowrap_mode = 3
+autowrap_trim_flags = 0
 
 [connection signal="button_up" from="Button" to="." method="_on_button_button_up" flags=18]

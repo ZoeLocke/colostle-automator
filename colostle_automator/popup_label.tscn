@@ -21,11 +21,13 @@ text = "🌐"
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("1_lrww6")
+theme_override_colors/font_outline_color = Color(0.3074815, 0.3074796, 0.30145383, 1)
+theme_override_constants/outline_size = 10
 text = "World"
 horizontal_alignment = 1
 
 [node name="IconAfter" type="Label" parent="HBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 2
 theme = ExtResource("1_modb1")
 text = "🌐"

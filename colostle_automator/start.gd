@@ -20,7 +20,7 @@ var clear_open = false
 
 func _ready():
 	options = $MarginContainer/VBoxContainer/OptionButton
-	text_box = $MarginContainer/VBoxContainer/TextBox
+	text_box = $MarginContainer/VBoxContainer/TextBoxMarginContainer/TextBox
 	shuffle_button = $MarginContainer/VBoxContainer/ButtonMarginContainer/HBoxContainer/ShuffleButton
 	draw_button = $MarginContainer/VBoxContainer/ButtonMarginContainer/HBoxContainer/DrawButton
 	for item in Globals.lookup_options:
@@ -75,7 +75,8 @@ func _on_close_clear():
 	clear_open = false
 	
 func _on_lookup_button_up() -> void:
-	open_lookup_popup()
+	if not lookup_open:
+		open_lookup_popup()
 	
 func _on_lookup_popup_reload():
 	# Reloads the lookup popup
@@ -83,6 +84,7 @@ func _on_lookup_popup_reload():
 	open_lookup_popup()
 
 # These functions work together to allow closing the lookup popup by clicking outside of it's area
+#------------------------------------------------
 # Detect if the mouse is over the main area (uses mouse stop function of the popup area to set to false if over the popup
 func _on_mouse_entered() -> void:
 	mouseover = true
@@ -97,3 +99,8 @@ func _input(event):
 		clear_popup.queue_free()
 		clear_open = false
 #------------------------------------------------
+
+
+func _on_feedback_button_button_up() -> void:
+	# Launch feedback form
+	OS.shell_open("https://forms.gle/Rt1579HVirqYa1eJ6")

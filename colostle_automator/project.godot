@@ -14,7 +14,7 @@ config/name="Colostle Automator"
 config/version="0.1.1"
 run/main_scene="uid://dhaemyd3m7w5q"
 config/features=PackedStringArray("4.5", "Mobile")
-boot_splash/bg_color=Color(0.9137255, 0.8901961, 0.8784314, 1)
+boot_splash/bg_color=Color(0.91764706, 0.9607843, 0.9764706, 1)
 boot_splash/image="uid://c7o7ketwdtca6"
 config/icon="uid://bdmgy71vtk1yp"
 
@@ -48,4 +48,4 @@ pointing/android/disable_scroll_deadzone=true
 
 renderer/rendering_method="mobile"
 textures/vram_compression/import_etc2_astc=true
-environment/defaults/default_clear_color=Color(0.913472, 0.890012, 0.877659, 1)
+environment/defaults/default_clear_color=Color(0.91764706, 0.9607843, 0.9764706, 1)

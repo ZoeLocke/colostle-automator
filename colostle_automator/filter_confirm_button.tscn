@@ -1,7 +1,43 @@
-[gd_scene load_steps=3 format=3 uid="uid://cucssfs3a0kgn"]
+[gd_scene load_steps=7 format=3 uid="uid://cucssfs3a0kgn"]
 
 [ext_resource type="Script" uid="uid://dtg6w816qal6g" path="res://filter_confirm_button.gd" id="1_gx15l"]
 [ext_resource type="Theme" uid="uid://bx2766408c4dq" path="res://resources/ui.tres" id="2_km852"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gx15l"]
+content_margin_left = 20.0
+content_margin_right = 20.0
+bg_color = Color(0.43529412, 0.61960787, 0.30588236, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_km852"]
+content_margin_left = 20.0
+content_margin_right = 20.0
+bg_color = Color(0.37977403, 0.5461305, 0.2623399, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nqj57"]
+content_margin_left = 20.0
+content_margin_right = 20.0
+bg_color = Color(0.38039216, 0.54509807, 0.2627451, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g346a"]
+content_margin_left = 20.0
+content_margin_right = 20.0
+bg_color = Color(0.38039216, 0.54509807, 0.2627451, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
 
 [node name="MarginContainer" type="MarginContainer"]
 offset_right = 40.0
@@ -12,7 +48,12 @@ script = ExtResource("1_gx15l")
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 2
+mouse_default_cursor_shape = 2
 theme = ExtResource("2_km852")
+theme_override_styles/normal = SubResource("StyleBoxFlat_gx15l")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_km852")
+theme_override_styles/hover = SubResource("StyleBoxFlat_nqj57")
+theme_override_styles/focus = SubResource("StyleBoxFlat_g346a")
 text = "Apply"
 
 [connection signal="button_up" from="Button" to="." method="_on_apply_button_up"]
