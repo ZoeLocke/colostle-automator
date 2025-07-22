@@ -99,8 +99,3 @@ func _input(event):
 		clear_popup.queue_free()
 		clear_open = false
 #------------------------------------------------
-
-
-func _on_feedback_button_button_up() -> void:
-	# Launch feedback form
-	OS.shell_open("https://forms.gle/Rt1579HVirqYa1eJ6")

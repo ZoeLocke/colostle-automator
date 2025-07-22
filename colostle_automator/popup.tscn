@@ -12,7 +12,7 @@ grow_vertical = 2
 theme_override_constants/margin_left = 60
 theme_override_constants/margin_top = 190
 theme_override_constants/margin_right = 60
-theme_override_constants/margin_bottom = 285
+theme_override_constants/margin_bottom = 220
 script = ExtResource("2_2eskn")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
