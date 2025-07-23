@@ -37,27 +37,19 @@ func build_popup():
 		if item in Globals.filter:
 			# Create the header label
 			var header = popup_label.instantiate()
-			var icon = Globals.lookup_options[item][0]
 			container.add_child(header)
-			# Set the text and icon for the header
-			header.get_node("HBoxContainer/IconBefore").text = icon
+			# Set the text for the header
 			header.get_node("HBoxContainer/Label").text = item
-			header.get_node("HBoxContainer/IconAfter").text = icon
-			# Add header to header group
-			#header.add_to_group("lookup_headers")
 			# Loop over the current lookup group
-			for sub_item in Globals.lookup_options[item][1]:
+			for sub_item in Globals.lookup_options[item]:
 				# Create a button for each lookup item
 				var button = popup_button.instantiate()
 				container.add_child(button)
 				button.get_node("Button").text = sub_item
 				button.lookup_picked.connect(_on_lookup_picked)
-				#button.add_to_group("lookup_buttons")
 	# Create the apply button
 	var apply = apply_button.instantiate()
 	checkbox_container.add_child(apply)
-	# Add to the apply button group to make it easier to delete it when re-run
-	#apply.add_to_group("apply_button")
 	# Connect the signal
 	apply.apply_pressed.connect(_on_filters_applied)
 

@@ -20,9 +20,28 @@ var selected = "Explore"
 var filter = []
 
 func _ready():
+	# Loop over the data source list
 	for item in data_sources:
+		#  Run the script to load in the data
 		load_data(item, data_sources[item])
+	# Convert the lookup options list to the required format (makes managing the CSV easier
+	var new_lookup_options = {}
+	for item in lookup_options:
+		# If there is not already and entry for the current book add one
+		if item["book"] not in new_lookup_options:
+			var title = item["book"]
+			new_lookup_options[title] = []
+	# Work through the book items adding the related lookups to it's array
+	for item in new_lookup_options:
+		for sub_item in lookup_options:
+			if sub_item["book"] == item:
+				new_lookup_options[item].append(sub_item["Look up"])
+	# Empty the lookup options var to avoid duplicates
+	lookup_options.clear()
+	# Load in the newly created data
+	lookup_options = new_lookup_options.duplicate(true)
 	shuffle()
+	# Prepare the filter list
 	for item in lookup_options:
 		filter.append(item)
 
@@ -38,12 +57,12 @@ func load_data(ds: String, ref: String):
 					deck_values = json.data
 				"lookup_options":
 					lookup_options = json.data
-					print(lookup_options)
-		else:
-			emit_signal("data_error", "Failed to parse JSON for %s" % [ds], json.get_error_message())
-			print("Failed to parse JSON for %s" % [ds], json.get_error_message())
-	else:
-		print("Failed to open %s." % [ds])
+	# Error handling needs reviewing
+		#else:
+			#emit_signal("data_error", "Failed to parse JSON for %s" % [ds], json.get_error_message())
+			#print("Failed to parse JSON for %s" % [ds], json.get_error_message())
+	#else:
+		#print("Failed to open %s." % [ds])
 	
 	#print(lookup_options)
 	#print(deck_values)
