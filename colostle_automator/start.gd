@@ -32,7 +32,13 @@ func draw_card():
 	# "draw a card" by popping the last entry, this is used over pop_front as pop_front triggers a rebuild of indexes
 	var card = Globals.deck.pop_back()
 	# Write out the results
-	text_box.append_text("[p align=center][color=%s][b]%s[/b][font=res://resources/NotoColorEmoji-Regular.ttf]%s[/font][/color][/p]" % [card["Color"],card["Face"],card["Suit"]])
+	# -- Convert face numbers stored as floats to strings
+	var face_value
+	if typeof(card["Face"]) == TYPE_FLOAT:
+		face_value = str(int(card["Face"]))
+	else:
+		face_value = card["Face"]
+	text_box.append_text("[p align=center][color=%s][b]%s[/b][font=res://resources/NotoColorEmoji-Regular.ttf]%s[/font][/color][/p]" % [card["Color"],face_value,card["Suit"]])
 	text_box.append_text("[p align=center][b]%s[/b]: %s.\n\n" % [Globals.selected, card[Globals.selected]])
 
 func open_lookup_popup():
