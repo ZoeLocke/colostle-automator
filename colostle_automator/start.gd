@@ -23,8 +23,6 @@ func _ready():
 	text_box = $MarginContainer/VBoxContainer/TextBoxMarginContainer/TextBox
 	shuffle_button = $MarginContainer/VBoxContainer/ButtonMarginContainer/HBoxContainer/ShuffleButton
 	draw_button = $MarginContainer/VBoxContainer/ButtonMarginContainer/HBoxContainer/DrawButton
-	for item in Globals.lookup_options:
-		Globals.filter.append(item)
 
 func draw_card():
 	# Make sure there are still cards in the deck, if not shuffle it
