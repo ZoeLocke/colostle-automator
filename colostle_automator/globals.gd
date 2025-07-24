@@ -12,6 +12,8 @@ var first_result = true
 var selected = "Explore"
 # Holds the ticked options in the filter list, first populated in the ready script of Start
 var filter = []
+# Used to fix issue where if you grab a button and scroll the button counts as clicked when you release
+var scrolling = false
 
 func _ready():
 	# Loop over the data source list

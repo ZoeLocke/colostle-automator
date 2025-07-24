@@ -43,6 +43,7 @@ lookup_headers=""
 
 pointing/android/enable_pan_and_scale_gestures=true
 pointing/android/disable_scroll_deadzone=true
+pointing/emulate_touch_from_mouse=true
 
 [rendering]
 

@@ -3,6 +3,7 @@ extends MarginContainer
 signal reload_popup
 signal lookup_picked
 
+
 var popup_label = preload("res://popup_label.tscn")
 var popup_button = preload("res://popup_button.tscn")
 var popup_checkbox = preload("res://popup_checkbox.tscn")
@@ -66,3 +67,9 @@ func _on_filters_applied():
 func _on_lookup_picked():
 	emit_signal("lookup_picked")
 	self.queue_free()
+	
+# The following two connections are used to allow users to grab buttons and drag scroll wihout it counting as a button click
+func _on_scroll_container_scroll_started() -> void:
+	Globals.scrolling = true
+func _on_scroll_container_scroll_ended() -> void:
+	Globals.scrolling = false

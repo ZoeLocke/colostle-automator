@@ -44,3 +44,5 @@ layout_mode = 2
 
 [connection signal="mouse_entered" from="ScrollContainer" to="ScrollContainer" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="ScrollContainer" to="ScrollContainer" method="_on_mouse_exited"]
+[connection signal="scroll_ended" from="ScrollContainer" to="." method="_on_scroll_container_scroll_ended"]
+[connection signal="scroll_started" from="ScrollContainer" to="." method="_on_scroll_container_scroll_started"]

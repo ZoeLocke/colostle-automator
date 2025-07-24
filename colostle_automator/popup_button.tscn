@@ -29,4 +29,4 @@ text = "Ocean Explore"
 autowrap_mode = 3
 autowrap_trim_flags = 0
 
-[connection signal="button_up" from="Button" to="." method="_on_button_button_up" flags=18]
+[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
