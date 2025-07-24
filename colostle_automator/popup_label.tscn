@@ -5,16 +5,21 @@
 [node name="MarginContainer" type="MarginContainer"]
 offset_right = 40.0
 offset_bottom = 40.0
-theme_override_constants/margin_top = 20
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 20
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="HBoxContainer"]
+[node name="Label" type="Label" parent="."]
+custom_minimum_size = Vector2(10, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("1_lrww6")
 theme_override_colors/font_outline_color = Color(0.3074815, 0.3074796, 0.30145383, 1)
-theme_override_constants/outline_size = 10
+theme_override_constants/outline_size = 16
+theme_override_font_sizes/font_size = 36
 text = "World"
 horizontal_alignment = 1
+autowrap_mode = 2
+autowrap_trim_flags = 0
+justification_flags = 161

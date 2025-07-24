@@ -39,7 +39,7 @@ func build_popup():
 			var header = popup_label.instantiate()
 			container.add_child(header)
 			# Set the text for the header
-			header.get_node("HBoxContainer/Label").text = item
+			header.get_node("Label").text = item
 			# Loop over the current lookup group
 			for sub_item in Globals.lookup_options[item]:
 				# Create a button for each lookup item
