@@ -92,7 +92,7 @@ theme_override_constants/margin_bottom = 30
 [node name="Logo" type="TextureRect" parent="MarginContainer/VBoxContainer/LogoMarginContainer"]
 layout_mode = 2
 texture = ExtResource("2_g38d0")
-stretch_mode = 3
+stretch_mode = 5
 
 [node name="ShuffleButton" type="TextureButton" parent="MarginContainer/VBoxContainer/LogoMarginContainer"]
 layout_mode = 2

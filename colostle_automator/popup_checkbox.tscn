@@ -19,5 +19,6 @@ theme = ExtResource("1_5u3jd")
 theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 text = "Holding Text"
 alignment = 1
+autowrap_mode = 2
 
 [connection signal="button_up" from="CheckBox" to="." method="_on_check_box_button_up" flags=18]

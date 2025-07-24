@@ -23,6 +23,8 @@ func _ready():
 	text_box = $MarginContainer/VBoxContainer/TextBoxMarginContainer/TextBox
 	shuffle_button = $MarginContainer/VBoxContainer/ButtonMarginContainer/HBoxContainer/ShuffleButton
 	draw_button = $MarginContainer/VBoxContainer/ButtonMarginContainer/HBoxContainer/DrawButton
+	if not Globals.data_error.is_empty():
+		text_box.append_text("[p align=center][color=red][b]%s[/b][/color][/p]\n\n" % Globals.data_error)
 
 func draw_card():
 	# Make sure there are still cards in the deck, if not shuffle it
@@ -86,7 +88,7 @@ func _on_lookup_popup_reload():
 	# Reloads the lookup popup
 	popup.queue_free()
 	open_lookup_popup()
-
+	
 # These functions work together to allow closing the lookup popup by clicking outside of it's area
 #------------------------------------------------
 # Detect if the mouse is over the main area (uses mouse stop function of the popup area to set to false if over the popup
