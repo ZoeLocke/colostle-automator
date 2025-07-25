@@ -5,6 +5,7 @@ var options
 var text_box
 var shuffle_button
 var draw_button
+var content_container
 var clear_log_popup = preload("res://clear_log_popup.tscn")
 var lookup_popup = preload("res://popup.tscn")
 # Holds the instantiated child for the lookup_popup
@@ -17,14 +18,18 @@ var mouseover
 var lookup_open = false
 # Flags if there is currently a clear popup open
 var clear_open = false
+var ready_finished = false
 
 func _ready():
 	options = $MarginContainer/VBoxContainer/OptionButton
 	text_box = $MarginContainer/VBoxContainer/TextBoxMarginContainer/TextBox
 	shuffle_button = $MarginContainer/VBoxContainer/ButtonMarginContainer/HBoxContainer/ShuffleButton
 	draw_button = $MarginContainer/VBoxContainer/ButtonMarginContainer/HBoxContainer/DrawButton
+	content_container = $MarginContainer/VBoxContainer
 	if not Globals.data_error.is_empty():
 		text_box.append_text("[p align=center][color=red][b]%s[/b][/color][/p]\n\n" % Globals.data_error)
+	ready_finished = true
+	resize_content()
 
 func draw_card():
 	# Make sure there are still cards in the deck, if not shuffle it
@@ -49,6 +54,17 @@ func open_lookup_popup():
 	popup.reload_popup.connect(_on_lookup_popup_reload)
 	popup.lookup_picked.connect(_on_lookup_picked)
 	lookup_open = true
+	
+func resize_content():
+	const min_size_base = Vector2(640,1280)
+	var viewport_targets = {1000: 1,1500: 1.5,2800: 2}
+	var viewport_x = get_viewport().get_visible_rect().size[0]
+	for item in viewport_targets:
+		if viewport_x <= item:
+			var new_size = Vector2(min_size_base[0]*viewport_targets[item],min_size_base[1]*viewport_targets[item])
+			content_container.custom_minimum_size = new_size
+			print(new_size)
+			break
 
 func _on_lookup_picked():
 	# Add a seperator when the table is changed
@@ -105,3 +121,6 @@ func _input(event):
 		clear_popup.queue_free()
 		clear_open = false
 #------------------------------------------------
+
+func _notification(what):
+	if what == NOTIFICATION_RESIZED and ready_finished: resize_content()

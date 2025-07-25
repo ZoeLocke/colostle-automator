@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cwrck616f7ara"
-path="res://.godot/imported/coloste-automator-logo.png-b6902fc6f68a2098cc0da52377f3f3cb.ctex"
+uid="uid://chl3spd6xu2y5"
+path="res://.godot/imported/icon_144.png-ff1d435b7d3641e21a11d2d9b992b3d9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/coloste-automator-logo.png"
-dest_files=["res://.godot/imported/coloste-automator-logo.png-b6902fc6f68a2098cc0da52377f3f3cb.ctex"]
+source_file="res://images/icon_144.png"
+dest_files=["res://.godot/imported/icon_144.png-ff1d435b7d3641e21a11d2d9b992b3d9.ctex"]
 
 [params]
 

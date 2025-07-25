@@ -57,3 +57,5 @@ func shuffle():
 	deck.shuffle()
 	deck.shuffle()
 	deck.shuffle()
+	
+	
