@@ -19,7 +19,7 @@ theme_override_constants/margin_top = 40
 theme_override_constants/margin_right = 20
 script = ExtResource("1_7l77g")
 
-[node name="Button" type="Button" parent="."]
+[node name="Button" type="Button" parent="." groups=["ui_elements"]]
 layout_mode = 2
 mouse_filter = 1
 mouse_default_cursor_shape = 2

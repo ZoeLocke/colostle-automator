@@ -4,15 +4,13 @@
 [ext_resource type="Script" uid="uid://c23th6chwplfb" path="res://popup.gd" id="2_2eskn"]
 
 [node name="MarginContainer" type="MarginContainer"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = -1
+anchor_right = 0.208
+anchor_bottom = 0.35200003
+offset_right = 0.23999023
+offset_bottom = -0.5600281
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 60
-theme_override_constants/margin_top = 190
-theme_override_constants/margin_right = 60
-theme_override_constants/margin_bottom = 220
 script = ExtResource("2_2eskn")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]

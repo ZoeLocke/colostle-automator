@@ -10,7 +10,7 @@ size_flags_vertical = 3
 theme_override_constants/margin_top = 40
 theme_override_constants/margin_right = 20
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." groups=["ui_elements"]]
 custom_minimum_size = Vector2(10, 10)
 layout_mode = 2
 size_flags_horizontal = 3

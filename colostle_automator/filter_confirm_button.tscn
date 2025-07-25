@@ -46,7 +46,7 @@ theme_override_constants/margin_top = 20
 theme_override_constants/margin_bottom = 20
 script = ExtResource("1_gx15l")
 
-[node name="Button" type="Button" parent="."]
+[node name="Button" type="Button" parent="." groups=["ui_elements"]]
 layout_mode = 2
 mouse_default_cursor_shape = 2
 theme = ExtResource("2_km852")

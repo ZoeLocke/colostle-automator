@@ -29,7 +29,7 @@ func _ready():
 	if not Globals.data_error.is_empty():
 		text_box.append_text("[p align=center][color=red][b]%s[/b][/color][/p]\n\n" % Globals.data_error)
 	ready_finished = true
-	resize_content()
+#	resize_content()
 
 func draw_card():
 	# Make sure there are still cards in the deck, if not shuffle it
@@ -49,21 +49,41 @@ func draw_card():
 	text_box.append_text("[p align=center][b]%s[/b]: %s.\n\n" % [Globals.selected, card[Globals.selected]])
 
 func open_lookup_popup():
+	# Create the popup
 	popup = lookup_popup.instantiate()
 	add_child(popup)
+	# Connect signals
 	popup.reload_popup.connect(_on_lookup_popup_reload)
 	popup.lookup_picked.connect(_on_lookup_picked)
+	# Update state
 	lookup_open = true
+	# Align popup with textbox
+	popup._set_size(text_box.get_size())
+	popup._set_position(text_box.global_position)
+
 	
 func resize_content():
-	const min_size_base = Vector2(640,1280)
+	# Sets the minimum size of various UI elements based on the viewport size, called when screen is resized
+	const container_min_default = Vector2(640,1280)
+	const button_min_deault = 52
 	var viewport_targets = {1000: 1,1500: 1.5,2800: 2}
 	var viewport_x = get_viewport().get_visible_rect().size[0]
-	for item in viewport_targets:
-		if viewport_x <= item:
-			var new_size = Vector2(min_size_base[0]*viewport_targets[item],min_size_base[1]*viewport_targets[item])
-			content_container.custom_minimum_size = new_size
-			print(new_size)
+	# Close the lookup if it's open to stop it from being weirdly positioned
+	if lookup_open:
+		popup.queue_free()
+		lookup_open = false
+	# Loop through target sizes
+	for target in viewport_targets:
+		# If the viewport x is smaller than the target, change UI container size and exit the entire loop
+		if viewport_x <= target:
+			var new_container_size = Vector2(container_min_default[0]*viewport_targets[target],container_min_default[1]*viewport_targets[target])
+			var new_button_y = button_min_deault * viewport_targets[target]
+			content_container.custom_minimum_size = new_container_size
+			# Also loop through all the buttons to make them bigger
+			for element in get_tree().get_nodes_in_group("ui_elements"):
+				var button_size = element.custom_minimum_size
+				button_size[1] = new_button_y
+				element.custom_minimum_size = button_size
 			break
 
 func _on_lookup_picked():
@@ -122,5 +142,9 @@ func _input(event):
 		clear_open = false
 #------------------------------------------------
 
+#func _notification(what):
+	#if what == NOTIFICATION_RESIZED and ready_finished: resize_content()
 func _notification(what):
-	if what == NOTIFICATION_RESIZED and ready_finished: resize_content()
+	if what == NOTIFICATION_RESIZED and lookup_open: 
+		popup.queue_free()
+		lookup_open = false

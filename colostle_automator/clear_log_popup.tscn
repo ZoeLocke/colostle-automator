@@ -93,7 +93,7 @@ theme_override_constants/margin_left = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="NoButton" type="Button" parent="VBoxContainer/InputMarginContainer"]
+[node name="NoButton" type="Button" parent="VBoxContainer/InputMarginContainer" groups=["ui_elements"]]
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_default_cursor_shape = 2
@@ -106,7 +106,7 @@ theme_override_constants/margin_left = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="YesButton" type="Button" parent="VBoxContainer/InputMarginContainer2"]
+[node name="YesButton" type="Button" parent="VBoxContainer/InputMarginContainer2" groups=["ui_elements"]]
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_default_cursor_shape = 2

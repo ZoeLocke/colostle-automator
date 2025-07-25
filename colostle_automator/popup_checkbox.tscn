@@ -11,7 +11,7 @@ grow_horizontal = 2
 theme_override_constants/margin_top = 20
 script = ExtResource("1_yycq1")
 
-[node name="CheckBox" type="CheckBox" parent="."]
+[node name="CheckBox" type="CheckBox" parent="." groups=["ui_elements"]]
 layout_mode = 2
 size_flags_vertical = 0
 mouse_default_cursor_shape = 2
